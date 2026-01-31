@@ -1028,11 +1028,12 @@
             margin-bottom: 3rem;
         }
 
-        .focus-chart-header h3 {
+        .focus-chart-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 800;
             margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
         }
 
         .focus-chart-header .focus-chart-subhead {
@@ -1104,7 +1105,7 @@
         }
 
         .focus-chart-annotation.slump {
-            top: 60%;
+            top: 42%;
             left: 58%;
             background: rgba(220, 70, 70, 0.1);
             border-color: rgba(220, 70, 70, 0.3);
@@ -1137,30 +1138,72 @@
         }
 
         .focus-source {
-            text-align: center;
-            margin-top: 2.5rem;
-            font-size: 0.8rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .focus-source-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--text-muted);
+            margin-bottom: 1.25rem;
         }
 
         .focus-source-links {
             display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .focus-source-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .focus-source-num {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(245, 166, 35, 0.1);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 0.75rem;
-            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .focus-source-content {
+            flex: 1;
         }
 
         .focus-source a {
-            color: var(--accent);
+            color: var(--text);
             text-decoration: none;
-            border-bottom: 1px solid rgba(245, 166, 35, 0.3);
-            transition: border-color 0.2s;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         .focus-source a:hover {
-            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .focus-source-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            line-height: 1.5;
         }
 
         @media (max-width: 768px) {
@@ -2314,7 +2357,7 @@
                 Only 10 Founding Member spots available
             </div>
             <h1>Your <span class="highlight">9-to-5</span> ends<br>at <span class="highlight">5 AM.</span></h1>
-            <p>Members wake up at 5 AM and use 3 hours every morning to build wealth, grow their income, and quit their 9-to-5. Most see real results within 90 days.</p>
+            <p>You're tired of living for the weekend. Tired of building someone else's dream. Members reclaim 3 hours every morning to build their own wealth &mdash; and most are on track to quit their 9-to-5 within 2 years.</p>
             <div class="hero-buttons">
                 <a href="#pricing" class="btn-primary">Start Your Path to Freedom &darr;</a>
                 <a href="#why" class="btn-secondary">See How It Works</a>
@@ -2353,9 +2396,9 @@
             <div class="focus-chart-section" style="margin-top: 0; padding-top: 0; border-top: none;">
                 <div class="focus-chart-header">
                     <span class="section-label">The Science</span>
-                    <h3>You're giving away your best hours</h3>
+                    <h2>You're giving away your best hours</h2>
                     <p class="focus-chart-subhead">Your brain's peak performance window</p>
-                    <p>Science shows cognitive focus peaks in early morning hours &mdash; before most people wake up. Wake at 5 AM and invest these golden hours in yourself.</p>
+                    <p>Every morning, your brain hits peak performance &mdash; and you sleep through it. Then you give what's left to your employer. Take back your sharpest hours and invest them in your own future.</p>
                 </div>
                 <div class="focus-chart-container">
                     <span class="focus-chart-y-label">Focus &amp; Clarity</span>
@@ -2450,11 +2493,29 @@
                     </div>
                 </div>
                 <div class="focus-source">
-                    Based on circadian rhythm research:
+                    <div class="focus-source-title">Based on Circadian Rhythm Research</div>
                     <div class="focus-source-links">
-                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3119836/" target="_blank" rel="noopener">NCBI &mdash; Circadian Rhythms &amp; Cognitive Performance</a>
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053810011000341" target="_blank" rel="noopener">ScienceDirect &mdash; Time of Day &amp; Executive Function</a>
-                        <a href="https://hbr.org/2016/01/when-to-schedule-your-most-important-work" target="_blank" rel="noopener">Harvard Business Review &mdash; Peak Performance Timing</a>
+                        <div class="focus-source-item">
+                            <span class="focus-source-num">1</span>
+                            <div class="focus-source-content">
+                                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3119836/" target="_blank" rel="noopener">Circadian Rhythms &amp; Cognitive Performance</a>
+                                <div class="focus-source-desc">NCBI study on how biological clocks influence mental performance throughout the day.</div>
+                            </div>
+                        </div>
+                        <div class="focus-source-item">
+                            <span class="focus-source-num">2</span>
+                            <div class="focus-source-content">
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053810011000341" target="_blank" rel="noopener">Time of Day &amp; Executive Function</a>
+                                <div class="focus-source-desc">ScienceDirect research on morning hours and decision-making capacity.</div>
+                            </div>
+                        </div>
+                        <div class="focus-source-item">
+                            <span class="focus-source-num">3</span>
+                            <div class="focus-source-content">
+                                <a href="https://hbr.org/2016/01/when-to-schedule-your-most-important-work" target="_blank" rel="noopener">Peak Performance Timing</a>
+                                <div class="focus-source-desc">Harvard Business Review on scheduling high-impact work during peak cognitive hours.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2463,14 +2524,14 @@
             <div class="best-hours-header" style="margin-top: 6rem;">
                 <span class="section-label">The Shift</span>
                 <h2>Same 24 hours. Different results.</h2>
-                <p>It's not about working more. It's about when you work on what matters.</p>
+                <p>It's not about working more. It's about shifting how you see yourself &mdash; and when you work on what matters.</p>
             </div>
 
             <div class="time-bars-container">
                 <!-- TODAY -->
                 <div class="time-bar-block today">
                     <div class="time-bar-header">
-                        <span class="time-bar-title">This is you today</span>
+                        <span class="time-bar-title">This is you today &mdash; stuck</span>
                         <span class="time-bar-time">Wake up 7:30 AM</span>
                     </div>
                     <div class="time-bar-container">
@@ -2504,7 +2565,7 @@
                 <!-- TOMORROW -->
                 <div class="time-bar-block tomorrow">
                     <div class="time-bar-header">
-                        <span class="time-bar-title">This is you in 90 days</span>
+                        <span class="time-bar-title">This is you in 90 days &mdash; in control</span>
                         <span class="time-bar-time">Wake up 5:00 AM</span>
                     </div>
                     <div class="time-bar-container">
@@ -2535,7 +2596,7 @@
                 <!-- Legend -->
                 <div class="time-bar-legend">
                     <div class="legend-item"><span class="legend-dot sleep"></span> Sleeping</div>
-                    <div class="legend-item"><span class="legend-dot yours"></span> Building your future</div>
+                    <div class="legend-item"><span class="legend-dot yours"></span> Building your future self</div>
                     <div class="legend-item"><span class="legend-dot employer"></span> Employer's time</div>
                 </div>
             </div>
@@ -2548,27 +2609,27 @@
         <div class="why-inner reveal">
             <span class="section-label">The Method</span>
             <h2>By 8 AM, you've already won the day</h2>
-            <p>Here's what a single morning looks like &mdash; and what it produces.</p>
+            <p>While others hit snooze, you're building the life that lets you walk away from your job.</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-time">5:00</div>
                     <div class="timeline-title">Rewire Your Identity</div>
-                    <div class="timeline-desc">You become the kind of person who wakes up with purpose. Journaling and mindset work build the confidence to make bold financial moves.</div>
+                    <div class="timeline-desc">You become the kind of person who wakes up with purpose. Replace old mental models with ones that serve you &mdash; journaling and mindset work build the self-belief to make bold moves.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-time">5:30</div>
                     <div class="timeline-title">Build Real Wealth</div>
-                    <div class="timeline-desc">Deep work on your money &mdash; optimize your budget with AI, research your next investment, develop skills that increase your income.</div>
+                    <div class="timeline-desc">This is where your escape plan takes shape. Optimize your budget, research investments, build income streams &mdash; the work that actually moves the needle on financial freedom.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-time">6:30</div>
                     <div class="timeline-title">Stay Accountable</div>
-                    <div class="timeline-desc">Share your progress with people who get it. Members who check in daily are 4x more likely to hit their financial goals.</div>
+                    <div class="timeline-desc">No more going it alone. You're surrounded by people escaping the same trap. Members who check in daily are 4x more likely to hit their financial goals.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-time">7:30</div>
                     <div class="timeline-title">Arrive Already Ahead</div>
-                    <div class="timeline-desc">Walk into work knowing you've already invested in your freedom. After 1 year, that's 1,095 hours toward quitting your 9-to-5.</div>
+                    <div class="timeline-desc">Walk into work knowing today brought you closer to walking out for good. After 1 year, that's 1,095 hours invested in your exit.</div>
                 </div>
             </div>
 
@@ -2576,7 +2637,7 @@
             <div class="lead-magnet">
                 <span class="lead-magnet-badge">Free Download</span>
                 <h3>Get The Morning Protocol</h3>
-                <p>The exact step-by-step routine I used to transform my mornings and build financial freedom. Yours free.</p>
+                <p>The exact routine that helped me go from paycheck-to-paycheck to building real wealth. Yours free.</p>
                 <form class="lead-magnet-form" action="#" method="post">
                     <input type="email" name="email" placeholder="Enter your email" required>
                     <button type="submit">Send It &rarr;</button>
@@ -2942,7 +3003,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
-            <div class="footer-copy">&copy; 2026 The Sunrise Club. All rights reserved.</div>
+            <div class="footer-copy">Founded in Austin, 2026 &nbsp;·&nbsp; &copy; 2026 The Sunrise Club. All rights reserved.</div>
         </div>
     </footer>
 
