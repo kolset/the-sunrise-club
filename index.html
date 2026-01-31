@@ -168,11 +168,11 @@
         }
 
         .hero-gallery-row.slide-left {
-            animation: heroSlideLeft 40s linear infinite;
+            animation: heroSlideLeft 60s linear infinite;
         }
 
         .hero-gallery-row.slide-right {
-            animation: heroSlideRight 40s linear infinite;
+            animation: heroSlideRight 60s linear infinite;
         }
 
         @keyframes heroSlideLeft {
@@ -205,6 +205,28 @@
                 width: 200px;
                 height: 130px;
             }
+        }
+
+        /* Fade edges on left and right */
+        .hero-gallery::before,
+        .hero-gallery::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-gallery::before {
+            left: 0;
+            background: linear-gradient(to right, #0a0a12 0%, transparent 100%);
+        }
+
+        .hero-gallery::after {
+            right: 0;
+            background: linear-gradient(to left, #0a0a12 0%, transparent 100%);
         }
 
         /* Animated sunrise gradient fallback */
@@ -2518,6 +2540,21 @@
                 <div class="hero-gallery-item"><img src="images/member2.jpg" alt=""></div>
                 <div class="hero-gallery-item"><img src="images/member5.jpg" alt=""></div>
                 <div class="hero-gallery-item"><img src="images/member3.jpg" alt=""></div>
+            </div>
+            <!-- Row 4 - Slides Right -->
+            <div class="hero-gallery-row slide-right">
+                <div class="hero-gallery-item"><img src="images/member2.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member6.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member4.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member1.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member3.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member5.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member2.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member6.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member4.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member1.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member3.jpg" alt=""></div>
+                <div class="hero-gallery-item"><img src="images/member5.jpg" alt=""></div>
             </div>
         </div>
         <!-- Fallback gradient if images don't load -->
