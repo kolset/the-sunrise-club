@@ -874,23 +874,24 @@
             }
         }
 
-        /* ── FLOW SECTION ── */
-        .flow-section {
+        /* ── BEST HOURS / GOLDEN HOUR SECTION ── */
+        .best-hours {
             padding: 7rem 2rem;
-            background: var(--bg-warm);
+            background: var(--bg);
         }
 
-        .flow-inner {
-            max-width: 800px;
+        .best-hours-inner {
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 5%;
         }
 
-        .flow-header {
+        .best-hours-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
 
-        .flow-header h2 {
+        .best-hours h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
@@ -898,65 +899,173 @@
             letter-spacing: -0.02em;
         }
 
-        .flow-header p {
+        .best-hours-header p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            max-width: 550px;
+            margin: 0 auto;
         }
 
-        .flow-timeline {
-            position: relative;
-            padding-left: 3rem;
+        /* Focus Chart */
+        .focus-chart-section {
+            margin-top: 0;
+            padding-top: 0;
         }
 
-        .flow-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--accent), var(--card-border), var(--accent));
+        .focus-chart-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .flow-item {
-            position: relative;
-            padding-bottom: 2.5rem;
-        }
-
-        .flow-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .flow-dot {
-            position: absolute;
-            left: -3rem;
-            top: 0.4rem;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(245, 166, 35, 0.4);
-        }
-
-        .flow-time {
+        .focus-chart-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
         }
 
-        .flow-title {
+        .focus-chart-header .focus-chart-subhead {
+            color: var(--accent);
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .flow-desc {
+        .focus-chart-header p {
             color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .focus-chart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .focus-chart {
+            width: 100%;
+            height: auto;
+        }
+
+        .focus-chart-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            padding: 0 2.5%;
+        }
+
+        .focus-chart-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .focus-chart-y-label {
+            position: absolute;
+            left: -2rem;
+            top: 50%;
+            transform: rotate(-90deg) translateX(-50%);
+            transform-origin: left center;
+            font-size: 0.7rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+
+        .focus-chart-annotation {
+            position: absolute;
+            padding: 0.5rem 0.75rem;
+            background: rgba(245, 166, 35, 0.15);
+            border: 1px solid rgba(245, 166, 35, 0.3);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .focus-chart-annotation.peak {
+            top: 32%;
+            left: 20%;
+        }
+
+        .focus-chart-annotation.slump {
+            top: 42%;
+            left: 58%;
+            background: rgba(220, 70, 70, 0.1);
+            border-color: rgba(220, 70, 70, 0.3);
+            color: #e57373;
+        }
+
+        .focus-insight {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .focus-insight-item {
+            text-align: center;
+        }
+
+        .focus-insight-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .focus-insight-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .focus-source {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .focus-source-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .focus-source a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .focus-source a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .focus-chart-annotation {
+                font-size: 0.65rem;
+                padding: 0.35rem 0.5rem;
+            }
+
+            .focus-chart-annotation.peak {
+                left: 10%;
+            }
+
+            .focus-chart-annotation.slump {
+                left: 50%;
+            }
+
+            .focus-chart-y-label {
+                display: none;
+            }
         }
 
         /* ── BENEFITS SECTION ── */
@@ -1444,7 +1553,7 @@
         <a href="index.html" class="nav-logo">6am <span>Protocol</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#pillars">The Pillars</a></li>
-            <li><a href="#flow">Daily Flow</a></li>
+            <li><a href="#best-hours">The Science</a></li>
             <li><a href="#benefits">Benefits</a></li>
             <li><a href="#join" class="nav-cta">Start the Protocol</a></li>
         </ul>
@@ -1960,70 +2069,114 @@
         </div>
     </section>
 
-    <!-- DAILY FLOW -->
-    <section class="flow-section reveal" id="flow">
-        <div class="flow-inner">
-            <div class="flow-header">
-                <span class="section-label">The Ritual</span>
-                <h2>Your Daily Flow</h2>
-                <p>A guided journey through the protocol, from first breath to first action.</p>
-            </div>
-
-            <div class="flow-timeline">
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:00 AM</div>
-                    <div class="flow-title">Wake &amp; Hydrate</div>
-                    <div class="flow-desc">Rise without snoozing. Drink a full glass of water to rehydrate after sleep.</div>
+    <!-- BEST HOURS / GOLDEN HOUR -->
+    <section class="best-hours reveal" id="best-hours">
+        <div class="best-hours-inner">
+            <div class="focus-chart-section">
+                <div class="focus-chart-header">
+                    <span class="section-label">The Science</span>
+                    <h2>You're giving away your best hours</h2>
+                    <p class="focus-chart-subhead">Your brain's peak performance window</p>
+                    <p>Every morning, your brain hits peak performance &mdash; and you sleep through it. Then you give what's left to your employer. Take back your sharpest hours and invest them in your own future.</p>
                 </div>
+                <div class="focus-chart-container">
+                    <span class="focus-chart-y-label">Focus &amp; Clarity</span>
+                    <div class="focus-chart-annotation peak">Peak Focus Zone</div>
+                    <div class="focus-chart-annotation slump">Afternoon Slump</div>
+                    <svg class="focus-chart" viewBox="0 -15 400 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Grid lines -->
+                        <line x1="40" y1="150" x2="390" y2="150" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <line x1="40" y1="110" x2="390" y2="110" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4"/>
+                        <line x1="40" y1="70" x2="390" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4"/>
+                        <line x1="40" y1="30" x2="390" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4"/>
 
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:05 AM</div>
-                    <div class="flow-title">Breathwork Activation</div>
-                    <div class="flow-desc">10 minutes of intentional breathing. Box breathing or Wim Hof method to fully wake your body and mind.</div>
+                        <!-- Y-axis -->
+                        <line x1="40" y1="20" x2="40" y2="150" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+                        <!-- Highlight zone for peak hours -->
+                        <rect x="60" y="20" width="100" height="130" fill="url(#peakGradient)" opacity="0.3"/>
+
+                        <!-- Vertical dotted lines for peak hours boundary -->
+                        <line x1="60" y1="15" x2="60" y2="150" stroke="#f5a623" stroke-width="2" stroke-dasharray="6,4" opacity="0.8"/>
+                        <line x1="160" y1="15" x2="160" y2="150" stroke="#f5a623" stroke-width="2" stroke-dasharray="6,4" opacity="0.8"/>
+
+                        <!-- Peak hours label at top -->
+                        <rect x="65" y="-5" width="90" height="18" rx="4" fill="rgba(245,166,35,0.2)"/>
+                        <text x="110" y="7" text-anchor="middle" fill="#f5a623" font-size="9" font-weight="600" font-family="Inter, sans-serif">GOLDEN HOURS</text>
+
+                        <!-- The focus curve -->
+                        <path d="M40,100
+                                 C60,90 70,40 100,35
+                                 C130,30 150,45 175,55
+                                 C200,65 220,110 250,120
+                                 C280,130 300,100 320,95
+                                 C340,90 360,105 390,115"
+                              stroke="url(#curveGradient)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+                        <!-- Area fill under curve -->
+                        <path d="M40,100
+                                 C60,90 70,40 100,35
+                                 C130,30 150,45 175,55
+                                 C200,65 220,110 250,120
+                                 C280,130 300,100 320,95
+                                 C340,90 360,105 390,115
+                                 L390,150 L40,150 Z"
+                              fill="url(#areaGradient)" opacity="0.2"/>
+
+                        <!-- Peak point marker -->
+                        <circle cx="100" cy="35" r="5" fill="#f5a623"/>
+                        <circle cx="100" cy="35" r="8" fill="none" stroke="#f5a623" stroke-width="2" opacity="0.5"/>
+
+                        <!-- Slump point marker -->
+                        <circle cx="250" cy="120" r="4" fill="#e57373"/>
+
+                        <!-- Gradients -->
+                        <defs>
+                            <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#f5a623"/>
+                                <stop offset="35%" stop-color="#f5a623"/>
+                                <stop offset="55%" stop-color="#e57373"/>
+                                <stop offset="75%" stop-color="#a0a0b8"/>
+                                <stop offset="100%" stop-color="#6b6b80"/>
+                            </linearGradient>
+                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#f5a623"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </linearGradient>
+                            <linearGradient id="peakGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#f5a623"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="focus-chart-labels">
+                        <span class="focus-chart-label">5 AM</span>
+                        <span class="focus-chart-label">8 AM</span>
+                        <span class="focus-chart-label">12 PM</span>
+                        <span class="focus-chart-label">4 PM</span>
+                        <span class="focus-chart-label">8 PM</span>
+                    </div>
                 </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:15 AM</div>
-                    <div class="flow-title">Meditation</div>
-                    <div class="flow-desc">20 minutes of stillness. Guided or silent &mdash; focus on presence and letting thoughts pass without attachment.</div>
+                <div class="focus-insight">
+                    <div class="focus-insight-item">
+                        <div class="focus-insight-value">2-3x</div>
+                        <div class="focus-insight-label">More productive in morning</div>
+                    </div>
+                    <div class="focus-insight-item">
+                        <div class="focus-insight-value">5-8 AM</div>
+                        <div class="focus-insight-label">Peak cognitive window</div>
+                    </div>
+                    <div class="focus-insight-item">
+                        <div class="focus-insight-value">90%</div>
+                        <div class="focus-insight-label">Less distractions</div>
+                    </div>
                 </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:35 AM</div>
-                    <div class="flow-title">Gratitude Practice</div>
-                    <div class="flow-desc">Write three things you're grateful for. Be specific. Feel the appreciation in your body.</div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:40 AM</div>
-                    <div class="flow-title">Journaling</div>
-                    <div class="flow-desc">Free-write for 15 minutes. Capture dreams, process emotions, or explore ideas that emerged during meditation.</div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">6:55 AM</div>
-                    <div class="flow-title">Goal Setting &amp; Intentions</div>
-                    <div class="flow-desc">Define your top 3 priorities for today. Review weekly and monthly goals. Align your day with your vision.</div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">7:05 AM</div>
-                    <div class="flow-title">Self-Reflection</div>
-                    <div class="flow-desc">Review yesterday's wins and lessons. Adjust your approach. Commit to continuous improvement.</div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-dot"></div>
-                    <div class="flow-time">7:15 AM</div>
-                    <div class="flow-title">Ready to Conquer</div>
-                    <div class="flow-desc">You've invested in yourself before the world even woke up. Now go build something meaningful.</div>
+                <div class="focus-source">
+                    <div class="focus-source-links">
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3119836/" target="_blank" rel="noopener">NCBI</a>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053810011000341" target="_blank" rel="noopener">ScienceDirect</a>
+                        <a href="https://hbr.org/2016/01/when-to-schedule-your-most-important-work" target="_blank" rel="noopener">Harvard Business Review</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2239,7 +2392,7 @@
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#pillars">The Pillars</a></li>
-                <li><a href="#flow">Daily Flow</a></li>
+                <li><a href="#best-hours">The Science</a></li>
                 <li><a href="community.html">Community</a></li>
             </ul>
             <div class="footer-social">
