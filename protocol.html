@@ -1387,6 +1387,29 @@
         .collage-section {
             padding: 4rem 0;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Fade edges on left and right */
+        .collage-section::before,
+        .collage-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .collage-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--dark) 0%, transparent 100%);
+        }
+
+        .collage-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--dark) 0%, transparent 100%);
         }
 
         .collage-wrapper {
