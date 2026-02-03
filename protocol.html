@@ -666,247 +666,147 @@
         }
 
         /* ── STACKS SECTION ── */
+        /* ── STACKS - APPLE-INSPIRED ── */
         .stacks-section {
-            padding: 7rem 2rem;
-            background: var(--bg-warm);
+            padding: 6rem 2rem;
+            background: var(--dark);
         }
 
         .stacks-inner {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .stacks-header {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .stacks-inner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+        .stacks-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
         }
 
-        .stacks-inner > p {
+        .stacks-header p {
             color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 4rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .stacks-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
         }
 
         .stack-card {
-            background: var(--bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 2rem;
-            text-align: left;
-            position: relative;
-            transition: transform 0.3s, border-color 0.3s;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
         }
 
         .stack-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 166, 35, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+            transform: scale(1.02);
         }
 
-        .stack-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--orange));
-            border-radius: 24px 24px 0 0;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .stack-card:hover::before {
-            opacity: 1;
-        }
-
-        .stack-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-bottom: 1.5rem;
-        }
-
-        .stack-layer {
-            height: 8px;
-            border-radius: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--orange));
-            opacity: 0.3;
-            transition: all 0.3s ease;
-        }
-
-        .stack-layer:nth-child(1) {
-            width: 100%;
-            opacity: 0.9;
-        }
-
-        .stack-layer:nth-child(2) {
-            width: 85%;
-            opacity: 0.6;
-        }
-
-        .stack-layer:nth-child(3) {
-            width: 70%;
-            opacity: 0.35;
-        }
-
-        .stack-card:hover .stack-layer {
-            opacity: 1;
-        }
-
-        .stack-card:hover .stack-layer:nth-child(2) {
-            width: 90%;
-        }
-
-        .stack-card:hover .stack-layer:nth-child(3) {
-            width: 80%;
-        }
-
-        .stack-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(245, 166, 35, 0.1);
+        .stack-top {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--accent);
+            justify-content: space-between;
         }
 
-        .stack-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .stack-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stack-tagline {
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 1.25rem;
-            font-weight: 500;
-        }
-
-        .stack-rituals {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .stack-rituals li {
+        .stack-info {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.6rem 0;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .stack-rituals li:last-child {
-            border-bottom: none;
-        }
-
-        .stack-rituals .ritual-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
-        }
-
-        .stack-rituals .ritual-time {
-            margin-left: auto;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .stack-total {
+        .stack-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .stack-total-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .stack-total-time {
-            font-family: 'Playfair Display', serif;
+            justify-content: center;
             font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent);
         }
 
-        @media (max-width: 1000px) {
-            .stacks-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .stack-card:nth-child(1) .stack-icon { background: linear-gradient(135deg, #f5a623, #f7931e); }
+        .stack-card:nth-child(2) .stack-icon { background: linear-gradient(135deg, #34c759, #30d158); }
+        .stack-card:nth-child(3) .stack-icon { background: linear-gradient(135deg, #5e5ce6, #bf5af2); }
+        .stack-card:nth-child(4) .stack-icon { background: linear-gradient(135deg, #ff6b6b, #ff3b30); }
+        .stack-card:nth-child(5) .stack-icon { background: linear-gradient(135deg, #64d2ff, #0a84ff); }
+        .stack-card:nth-child(6) .stack-icon { background: linear-gradient(135deg, #ff9f0a, #ffcc00); }
+        .stack-card:nth-child(7) .stack-icon { background: linear-gradient(135deg, #ac8e68, #8b7355); }
+
+        .stack-title {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
-        @media (max-width: 650px) {
-            .stacks-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-                gap: 1rem;
-            }
+        .stack-time {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 500;
+            white-space: nowrap;
+        }
 
+        .stack-rituals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .stack-ritual {
+            font-size: 0.75rem;
+            color: var(--gray);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .stack-card:hover .stack-ritual {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-width: 768px) {
             .stacks-section {
                 padding: 4rem 1rem;
             }
 
+            .stacks-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
             .stack-card {
                 padding: 1.25rem;
-                border-radius: 16px;
+                border-radius: 14px;
             }
 
-            .stack-visual {
-                margin-bottom: 1rem;
-                gap: 4px;
+            .stack-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
             }
 
-            .stack-layer {
-                height: 6px;
+            .stack-title {
+                font-size: 0.95rem;
             }
 
-            .stack-card h3 {
-                font-size: 1.15rem;
-            }
-
-            .stack-card > p {
-                font-size: 0.85rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .stack-rituals {
-                gap: 0.4rem;
-            }
-
-            .stack-rituals li {
-                font-size: 0.8rem;
-                padding: 0.4rem 0;
+            .stack-ritual {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.5rem;
             }
         }
 
@@ -1961,152 +1861,119 @@
     <!-- STACKS -->
     <section class="stacks-section reveal" id="stacks">
         <div class="stacks-inner">
-            <span class="section-label">Choose Your Path</span>
-            <h2>Ritual Stacks</h2>
-            <p>Pre-built morning routines designed for specific goals. Pick a stack or mix and match to create your own.</p>
+            <div class="stacks-header">
+                <h2>Ritual Stacks</h2>
+                <p>Choose your morning path</p>
+            </div>
 
             <div class="stacks-grid">
-                <!-- The Basics Stack -->
                 <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">📖</div>
+                            <span class="stack-title">The Basics</span>
+                        </div>
+                        <span class="stack-time">30 min</span>
                     </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
-                    </div>
-                    <h3>The Basics</h3>
-                    <p class="stack-tagline">Start here. Build the foundation.</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Morning journaling (free write)
-                            <span class="ritual-time">15 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Review daily & weekly goals
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Set top 3 priorities for today
-                            <span class="ritual-time">5 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">30 min</span>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Journaling</span>
+                        <span class="stack-ritual">Goal Review</span>
+                        <span class="stack-ritual">Priorities</span>
                     </div>
                 </div>
 
-                <!-- Financial Freedom Stack -->
                 <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">💰</div>
+                            <span class="stack-title">Financial Freedom</span>
+                        </div>
+                        <span class="stack-time">55 min</span>
                     </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3>Financial Freedom</h3>
-                    <p class="stack-tagline">Build wealth while others sleep</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Wealth affirmations & visualization
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Portfolio review & market scan
-                            <span class="ritual-time">15 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Financial goal journaling
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Investment education (audiobook/podcast)
-                            <span class="ritual-time">20 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">55 min</span>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Visualization</span>
+                        <span class="stack-ritual">Portfolio</span>
+                        <span class="stack-ritual">Education</span>
                     </div>
                 </div>
 
-                <!-- Entrepreneur Stack -->
                 <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">⚡</div>
+                            <span class="stack-title">Entrepreneur</span>
+                        </div>
+                        <span class="stack-time">80 min</span>
                     </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-                    </div>
-                    <h3>Create My Company</h3>
-                    <p class="stack-tagline">Build your empire before 9am</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Vision board & business affirmations
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Deep work on #1 business priority
-                            <span class="ritual-time">45 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Skill building (course/tutorial)
-                            <span class="ritual-time">20 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Network outreach (1 message)
-                            <span class="ritual-time">5 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">80 min</span>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Deep Work</span>
+                        <span class="stack-ritual">Skills</span>
+                        <span class="stack-ritual">Networking</span>
                     </div>
                 </div>
 
-                <!-- Personal Growth Stack -->
                 <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">✨</div>
+                            <span class="stack-title">Personal Growth</span>
+                        </div>
+                        <span class="stack-time">50 min</span>
                     </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                        </svg>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Morning Pages</span>
+                        <span class="stack-ritual">Gratitude</span>
+                        <span class="stack-ritual">Affirmations</span>
                     </div>
-                    <h3>Personal Growth</h3>
-                    <p class="stack-tagline">Become 1% better every day</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Morning pages (stream of consciousness)
-                            <span class="ritual-time">15 min</span>
-                        </li>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">🧘</div>
+                            <span class="stack-title">Calm</span>
+                        </div>
+                        <span class="stack-time">45 min</span>
+                    </div>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Meditation</span>
+                        <span class="stack-ritual">Breathwork</span>
+                        <span class="stack-ritual">Stretching</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">💪</div>
+                            <span class="stack-title">Physical</span>
+                        </div>
+                        <span class="stack-time">60 min</span>
+                    </div>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Workout</span>
+                        <span class="stack-ritual">Cold Shower</span>
+                        <span class="stack-ritual">Nutrition</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <div class="stack-top">
+                        <div class="stack-info">
+                            <div class="stack-icon">📚</div>
+                            <span class="stack-title">The Reader</span>
+                        </div>
+                        <span class="stack-time">55 min</span>
+                    </div>
+                    <div class="stack-rituals">
+                        <span class="stack-ritual">Deep Reading</span>
+                        <span class="stack-ritual">Notes</span>
+                        <span class="stack-ritual">Reflection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
                         <li>
                             <span class="ritual-dot"></span>
                             Gratitude & intention setting
@@ -2124,141 +1991,6 @@
                         </li>
                     </ul>
                     <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">50 min</span>
-                    </div>
-                </div>
-
-                <!-- Calm Stack -->
-                <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                    </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                        </svg>
-                    </div>
-                    <h3>Calm</h3>
-                    <p class="stack-tagline">Start with stillness, carry peace all day</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Guided meditation
-                            <span class="ritual-time">20 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Box breathing exercise
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Gentle stretching / yoga
-                            <span class="ritual-time">15 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Mindful tea/coffee ritual
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">55 min</span>
-                    </div>
-                </div>
-
-                <!-- Physical Challenge Stack -->
-                <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                    </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
-                        </svg>
-                    </div>
-                    <h3>Physical Challenge</h3>
-                    <p class="stack-tagline">Forge discipline through discomfort</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Cold shower or ice bath
-                            <span class="ritual-time">5 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            High-intensity workout
-                            <span class="ritual-time">30 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Wim Hof breathing
-                            <span class="ritual-time">15 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Protein-rich breakfast prep
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">60 min</span>
-                    </div>
-                </div>
-
-                <!-- The Reader Stack -->
-                <div class="stack-card">
-                    <div class="stack-visual">
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                        <div class="stack-layer"></div>
-                    </div>
-                    <div class="stack-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
-                    </div>
-                    <h3>The Reader</h3>
-                    <p class="stack-tagline">52 books a year, one morning at a time</p>
-                    <ul class="stack-rituals">
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Deep reading session
-                            <span class="ritual-time">30 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Note-taking & highlighting review
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Book reflection journaling
-                            <span class="ritual-time">10 min</span>
-                        </li>
-                        <li>
-                            <span class="ritual-dot"></span>
-                            Apply one insight today (action item)
-                            <span class="ritual-time">5 min</span>
-                        </li>
-                    </ul>
-                    <div class="stack-total">
-                        <span class="stack-total-label">Total time</span>
-                        <span class="stack-total-time">55 min</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- BEST HOURS / GOLDEN HOUR -->
     <section class="best-hours reveal" id="best-hours">
         <div class="best-hours-inner">
